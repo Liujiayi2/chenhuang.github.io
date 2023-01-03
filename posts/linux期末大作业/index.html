@@ -590,19 +590,19 @@
 </blockquote>
 <p>（7）修改conf目录下的nginx.conf文件：</p>
 <p>修改的部分如下：</p>
-<pre><code class="language-conf" data-lang="conf">server {
-        listen       888;
-        server_name  localhost;
-        location / {
-            root   html/public;
-            index  index.html index.xml;
-        }
-        error_page   500 502 503 504  /50x.html;
-        location = /50x.html {
-            root   html;
-        }
-}
-</code></pre><p>（8）重载nginx：</p>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">server <span style="color:#f92672">{</span>
+        listen       888<span style="color:#f92672">;</span>
+        server_name  localhost<span style="color:#f92672">;</span>
+        location <span style="color:#f92672">/</span> <span style="color:#f92672">{</span>
+            root   html<span style="color:#f92672">/</span><span style="color:#66d9ef">public</span><span style="color:#f92672">;</span>
+            index  index<span style="color:#f92672">.</span><span style="color:#a6e22e">html</span> index<span style="color:#f92672">.</span><span style="color:#a6e22e">xml</span><span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+        error_page   500 502 503 504  <span style="color:#f92672">/</span>50x<span style="color:#f92672">.</span><span style="color:#a6e22e">html</span><span style="color:#f92672">;</span>
+        location <span style="color:#f92672">=</span> <span style="color:#f92672">/</span>50x<span style="color:#f92672">.</span><span style="color:#a6e22e">html</span> <span style="color:#f92672">{</span>
+            root   html<span style="color:#f92672">;</span>
+        <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
+</code></pre></div><p>（8）重载nginx：</p>
 <blockquote>
 <p><code>../sbin/nginx -s reload</code></p>
 </blockquote>
