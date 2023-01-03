@@ -22,7 +22,7 @@
  ssh-keygen -t rsa -C &amp;quot;2844545327@qq.com&amp;quot;
   cat /root/.ssh/id_rsa.pub
  （3）成功建立和Github的联系：
- ssh git@github.com
+     ssh git@github.com
  （4）关联到远程仓库：
  git remote add origin git@github.com:Liujiayi2/linux_dazuoye.git
   git push -u origin &amp;quot;main&amp;quot;
@@ -47,7 +47,7 @@
  ssh-keygen -t rsa -C &quot;2844545327@qq.com&quot;
   cat /root/.ssh/id_rsa.pub
  （3）成功建立和Github的联系：
- ssh git@github.com
+     ssh git@github.com
  （4）关联到远程仓库：
  git remote add origin git@github.com:Liujiayi2/linux_dazuoye.git
   git push -u origin &quot;main&quot;
@@ -72,7 +72,7 @@
  ssh-keygen -t rsa -C &quot;2844545327@qq.com&quot;
   cat /root/.ssh/id_rsa.pub
  （3）成功建立和Github的联系：
- ssh git@github.com
+     ssh git@github.com
  （4）关联到远程仓库：
  git remote add origin git@github.com:Liujiayi2/linux_dazuoye.git
   git push -u origin &quot;main&quot;
@@ -264,7 +264,11 @@
 <p><code>cat /root/.ssh/id_rsa.pub</code></p>
 </blockquote>
 <p>（3）成功建立和Github的联系：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%871.png" alt=""></p>
+</blockquote>
+</blockquote>
 <blockquote>
 <p><code>ssh git@github.com</code></p>
 </blockquote>
@@ -297,7 +301,11 @@
 <blockquote>
 <p><code>docker inspect --format='{{.NetworkSettings.IPAddress}}' fwd</code></p>
 </blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%872.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（5）创建一个服务端类和一个客户端类，使用git管理代码并上传远程仓库:</p>
 <blockquote>
 <p><code>vim SocketService.java</code></p>
@@ -392,7 +400,11 @@
 <blockquote>
 <p><code>git push -u origin &quot;main&quot;</code></p>
 </blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%873.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（6）将服务器端和客户端代码分别拷贝到对应容器的镜像里：</p>
 <blockquote>
 <p><code>docker cp SocketService.java fwd:/</code></p>
@@ -401,8 +413,16 @@
 <p><code>docker cp SocketClient.java khd:/</code></p>
 </blockquote>
 <p>（7）进入服务器的容器和客户端的容器，然后启动服务器端和客户端程序，开始通信：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%874.png" alt=""></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%875.png" alt=""></p>
+</blockquote>
+</blockquote>
 <hr>
 <h2 id="安装hugo并创建静态网站">安装hugo并创建静态网站</h2>
 <p><strong>1.安装并配置Hugo</strong></p>
@@ -519,7 +539,11 @@
 <p><code>hugo new posts/Linux期末大作业.md</code></p>
 </blockquote>
 <p>（2）编写文章：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%876.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（3）在本地使用hugo命令在根目录生成public文件夹：</p>
 <blockquote>
 <p><code>hugo -D</code></p>
@@ -555,7 +579,11 @@
 <blockquote>
 <p><code>192.168.92.132:80</code></p>
 </blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%877.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（6）将public文件夹里的全部文件复制到/usr/local/nginx-1.23.3/html中：</p>
 <blockquote>
 <p><code>cp -r public /usr/local/nginx-1.23.3/html</code></p>
@@ -579,13 +607,25 @@
 <p><code>../sbin/nginx -s reload</code></p>
 </blockquote>
 <p>（9）在浏览器上访问nginx服务器可以看到网站内容：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%878.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（10）点击文章也能看到文章内容：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%879.png" alt=""></p>
+</blockquote>
+</blockquote>
 <hr>
 <p><strong>4.将hugo静态网页部署到github上，在公网上访问</strong></p>
 <p>（1）新建<code>Liujiayi2.github.io</code>作为存储库名称：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8710.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（2）进入public文件夹，初始化仓库，配置github库远程链接，将public文件夹push到github上：</p>
 <blockquote>
 <p><code>git init</code></p>
@@ -602,19 +642,47 @@
 <blockquote>
 <p><code>git push -u origin master</code></p>
 </blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8711.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（3）在<code>Liujiayi2.github.io</code>下，单击 <code>Settings</code>，然后在边栏单击<code>页面</code>，选择<code>Deploy from a branch</code>和<code>None</code>，单击<code>Save</code>：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8712.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（4）单击<code>Code</code>，下拉，单击<code>Add a README</code>，进入新建页面后，下拉，单击<code>Commit new file</code>，生成链接<code>Liujiayi2.github.io</code>：</p>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8713.png" alt=""></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8714.png" alt=""></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8715.png" alt=""></p>
+</blockquote>
+</blockquote>
 <p>（5）访问<code>Liujiayi2.github.io</code>：</p>
 <blockquote>
 <p><code>http://Liujiayi2.github.io</code></p>
 </blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8716.png" alt=""></p>
+</blockquote>
+</blockquote>
+<blockquote>
+<blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8717.png" alt=""></p>
+</blockquote>
+</blockquote>
 
       </article>
     </section>
