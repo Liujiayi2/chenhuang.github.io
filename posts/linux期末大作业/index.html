@@ -557,7 +557,7 @@
 <blockquote>
 <p><code>tar -xzvf nginx-1.23.3.tar.gz</code></p>
 </blockquote>
-<p>（2）配置基本信息：</p>
+<p>（2）进入nginx-1.23.3目录，配置基本信息：</p>
 <blockquote>
 <p><code>./configure --prefix=/usr/local/nginx-1.23.3 --with-http_ssl_module --with-http_stub_status_module</code></p>
 </blockquote>
@@ -584,6 +584,7 @@
 <p><img src="/img/%E5%9B%BE%E7%89%877.png" alt=""></p>
 </blockquote>
 </blockquote>
+<p>Ps：如果访问不成功，可以用命令<code>systemctl stop firewalld</code>关闭虚拟机中的防火墙。</p>
 <p>（6）将public文件夹里的全部文件复制到/usr/local/nginx-1.23.3/html中：</p>
 <blockquote>
 <p><code>cp -r public /usr/local/nginx-1.23.3/html</code></p>
