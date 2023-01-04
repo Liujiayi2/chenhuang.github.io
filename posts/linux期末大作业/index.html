@@ -54,8 +54,8 @@
  Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代码git remote set-url origin git@github." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="http://192.168.92.132/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/" />
-<meta property="article:published_time" content="2023-01-04T00:00:34+08:00" />
-<meta property="article:modified_time" content="2023-01-04T00:00:34+08:00" />
+<meta property="article:published_time" content="2023-01-04T16:47:18+08:00" />
+<meta property="article:modified_time" content="2023-01-04T16:47:18+08:00" />
 
 
 
@@ -179,6 +179,8 @@
     <li><a href="#安装配置git">安装配置Git</a></li>
     <li><a href="#使用docker和socket技术使客户端和服务端之间的信息传递">使用docker和socket技术使客户端和服务端之间的信息传递</a></li>
     <li><a href="#安装hugo并创建静态网站">安装hugo并创建静态网站</a></li>
+    <li><a href="#运用nginx技术部署静态网站到web服务器">运用nginx技术部署静态网站到web服务器</a></li>
+    <li><a href="#将hugo静态网页部署到github上在公网上访问">将hugo静态网页部署到github上，在公网上访问</a></li>
   </ul>
 </nav>
     </div>
@@ -327,8 +329,7 @@
                         <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>
                                 server <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ServerSocket<span style="color:#f92672">(</span>2002<span style="color:#f92672">);</span>
                                 System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Service enable Success&#34;</span><span style="color:#f92672">);}</span>
-                        <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No Listen:&#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">);}</span>
-                        Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
+                        <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;No Listen:&#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">);}</span>                        Socket socket <span style="color:#f92672">=</span> <span style="color:#66d9ef">null</span><span style="color:#f92672">;</span>
                         <span style="color:#66d9ef">try</span><span style="color:#f92672">{</span>socket <span style="color:#f92672">=</span> server<span style="color:#f92672">.</span><span style="color:#a6e22e">accept</span><span style="color:#f92672">();}</span>
                         <span style="color:#66d9ef">catch</span><span style="color:#f92672">(</span>Exception e<span style="color:#f92672">){</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Error.&#34;</span> <span style="color:#f92672">+</span> e<span style="color:#f92672">);}</span>
                         String line<span style="color:#f92672">;</span>
@@ -412,11 +413,37 @@
 <blockquote>
 <p><code>docker cp SocketClient.java khd:/</code></p>
 </blockquote>
-<p>（7）进入服务器的容器和客户端的容器，然后启动服务器端和客户端程序，开始通信：</p>
+<p>（7）进入服务器的容器和客户端的容器，然后启动服务端和客户端程序，开始通信：</p>
+<p>服务端命令：</p>
+<blockquote>
+<p><code>docker exec -it fwd /bin/bash</code></p>
+</blockquote>
+<blockquote>
+<p><code>cd /</code></p>
+</blockquote>
+<blockquote>
+<p><code>javac SocketService.java</code></p>
+</blockquote>
+<blockquote>
+<p><code>java SocketService</code></p>
+</blockquote>
 <blockquote>
 <blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%874.png" alt=""></p>
 </blockquote>
+</blockquote>
+<p>客户端命令：</p>
+<blockquote>
+<p><code>docker exec -it khd /bin/bash</code></p>
+</blockquote>
+<blockquote>
+<p><code>cd /</code></p>
+</blockquote>
+<blockquote>
+<p><code>javac SocketClient.java</code></p>
+</blockquote>
+<blockquote>
+<p><code>java SocketClient</code></p>
 </blockquote>
 <blockquote>
 <blockquote>
@@ -540,6 +567,9 @@
 </blockquote>
 <p>（2）编写文章：</p>
 <blockquote>
+<p><code>vim content/posts/Linux期末大作业.md</code></p>
+</blockquote>
+<blockquote>
 <blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%876.png" alt=""></p>
 </blockquote>
@@ -549,7 +579,7 @@
 <p><code>hugo -D</code></p>
 </blockquote>
 <hr>
-<p><strong>3.运用nginx技术部署静态网站到web服务器</strong></p>
+<h2 id="运用nginx技术部署静态网站到web服务器">运用nginx技术部署静态网站到web服务器</h2>
 <p>（1）下载并解压nginx包：</p>
 <blockquote>
 <p><code>wget http://nginx.org/download/nginx-1.23.3.tar.gz</code></p>
@@ -623,7 +653,7 @@
 </blockquote>
 </blockquote>
 <hr>
-<p><strong>4.将hugo静态网页部署到github上，在公网上访问</strong></p>
+<h2 id="将hugo静态网页部署到github上在公网上访问">将hugo静态网页部署到github上，在公网上访问</h2>
 <p>（1）新建<code>Liujiayi2.github.io</code>作为存储库名称：</p>
 <blockquote>
 <blockquote>
@@ -651,7 +681,7 @@
 <p><img src="/img/%E5%9B%BE%E7%89%8711.png" alt=""></p>
 </blockquote>
 </blockquote>
-<p>（3）在<code>Liujiayi2.github.io</code>下，单击 <code>Settings</code>，然后在边栏单击<code>页面</code>，选择<code>Deploy from a branch</code>和<code>None</code>，单击<code>Save</code>：</p>
+<p>（3）在<code>Liujiayi2.github.io</code>下，单击 <code>Settings</code>，然后在边栏单击<code>页面</code>，选择<code>Deploy from a branch</code>和<code>None</code>，单击<code>Save</code>：</p>
 <blockquote>
 <blockquote>
 <p><img src="/img/%E5%9B%BE%E7%89%8712.png" alt=""></p>
