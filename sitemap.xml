@@ -3,42 +3,42 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>http://192.168.92.132/categories/</loc>
+    <loc>http://192.168.92.132:888/categories/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/categories/category1/</loc>
+    <loc>http://192.168.92.132:888/categories/category1/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</loc>
+    <loc>http://192.168.92.132:888/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/posts/</loc>
+    <loc>http://192.168.92.132:888/posts/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/tags/tag1/</loc>
+    <loc>http://192.168.92.132:888/tags/tag1/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/tags/tag2/</loc>
+    <loc>http://192.168.92.132:888/tags/tag2/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/tags/</loc>
+    <loc>http://192.168.92.132:888/tags/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   
   <url>
-    <loc>http://192.168.92.132/</loc>
+    <loc>http://192.168.92.132:888/</loc>
     <lastmod>2023-01-04T16:47:18+08:00</lastmod>
   </url>
   

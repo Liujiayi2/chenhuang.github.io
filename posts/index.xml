@@ -2,17 +2,17 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Posts on 一家之煮的博客</title>
-    <link>http://192.168.92.132/posts/</link>
+    <link>http://192.168.92.132:888/posts/</link>
     <description>Recent content in Posts on 一家之煮的博客</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en</language>
-    <lastBuildDate>Wed, 04 Jan 2023 16:47:18 +0800</lastBuildDate><atom:link href="http://192.168.92.132/posts/index.xml" rel="self" type="application/rss+xml" />
+    <lastBuildDate>Wed, 04 Jan 2023 16:47:18 +0800</lastBuildDate><atom:link href="http://192.168.92.132:888/posts/index.xml" rel="self" type="application/rss+xml" />
     <item>
       <title>Linux期末大作业</title>
-      <link>http://192.168.92.132/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</link>
+      <link>http://192.168.92.132:888/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</link>
       <pubDate>Wed, 04 Jan 2023 16:47:18 +0800</pubDate>
       
-      <guid>http://192.168.92.132/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</guid>
+      <guid>http://192.168.92.132:888/posts/linux%E6%9C%9F%E6%9C%AB%E5%A4%A7%E4%BD%9C%E4%B8%9A/</guid>
       <description>安装配置Git  1.安装Git
  sudo yum install git
   2.配置Git
