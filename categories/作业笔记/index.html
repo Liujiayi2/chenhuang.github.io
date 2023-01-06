@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>作业笔记 | 一家之煮的博客</title>
+    <title>作业笔记 | 宸皇的博客</title>
 
     
 
@@ -63,7 +63,7 @@
     
 
     
-    background-image: url(/me/background.jpg);
+    background-image: url(/img/background.jpg);
     
   }
   
@@ -75,7 +75,7 @@
     
 
     
-    background-image: url(/me/background-dark.jpg);
+    background-image: url(/img/background-dark.jpg);
     
   }
   
@@ -105,6 +105,10 @@
   </a>
   
   
+  <a class="item" title="Search" onclick="toggleSearch(event)">
+    <i class="large link search icon"></i>
+  </a>
+  
 </nav>
 
     <div class="flip-container">
@@ -121,7 +125,7 @@
   
 
   <div class="content">
-    <h1 class="ui medium header">一家之煮<span class="sub header">一以贯之的努力，不得懈怠的人生。</span>
+    <h1 class="ui medium header">宸皇<span class="sub header">一以贯之的努力，不得懈怠的人生。</span>
     </h1>
 
     <article class="ui horizontal list">
@@ -213,27 +217,14 @@
     </h2>
     <div class="meta">
       <p class="date">
-        Wednesday, Jan 4, 2023
+        
+          <span data-format="luxon">2023-01-04T16:47:18&#43;08:00</span>
+        
       </p>
     </div>
     <div class="description">
-      安装配置Git  1.安装Git
- sudo yum install git
-  2.配置Git
-（1）配置用户名和邮箱：
- git config --global user.name &quot;Liujiayi2&quot;
-git config --global user.email &quot;2844545327@qq.com&quot;
-git config --list
- （2）获取ssh密钥：
- ssh-keygen -t rsa -C &quot;2844545327@qq.com&quot;
-cat /root/.ssh/id_rsa.pub
- （3）成功建立和Github的联系：
-   ssh git@github.com
- （4）关联到远程仓库：
- git remote add origin git@github.com:Liujiayi2/linux_dazuoye.git
-git push -u origin &quot;main&quot;
-Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代码git remote set-url origin git@github.com:Liujiayi2/linux_dazuoye.git，然后再重新运行git push -u origin &quot;main&quot;。
-  使用docker和socket技术使客户端和服务端之间的信息传递 （1）安装docker：
+      <p>1.使用docker和socket技术使客户端和服务端之间的信息传递;
+2.hugo+nginx+github搭建个人博客。</p>
     </div>
   </div>
 
@@ -253,7 +244,7 @@ Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代
 
             <footer class="ui basic center aligned segment" style="background-color: transparent;">
               
-              <p>© 2022 - 2023 一家之煮的博客</p>
+              <p>© 2022 - 2023 宸皇的博客</p>
               
 
               <p>Powered by <a href="https://gohugo.io/" target="_blank">Hugo</a> with theme <a href="https://github.com/g1eny0ung/hugo-theme-dream" target="_blank">Dream</a>.</p>
@@ -272,7 +263,7 @@ Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代
   
 
   <div class="content">
-    <h1 class="ui medium header">一家之煮<span class="sub header">一以贯之的努力，不得懈怠的人生。</span>
+    <h1 class="ui medium header">宸皇<span class="sub header">一以贯之的努力，不得懈怠的人生。</span>
     </h1>
 
     <article class="ui horizontal list">
@@ -404,6 +395,28 @@ Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代
     <script src="https://cdn.jsdelivr.net/npm/semantic-ui@2.4.2/dist/semantic.min.js" integrity="sha256-CgSoWC9w5wNmI1aN8dIMK+6DPelUEtvDr+Bc2m/0Nx8=" crossorigin="anonymous"></script>
 
     
+    <div class="ui segment" id="dream-search">
+  <div class="ui search">
+    <div class="ui transparent input">
+      <input class="prompt" type="text" placeholder="Search" />
+    </div>
+    <div class="results"></div>
+  </div>
+</div>
+<script>
+  $(document).ready(function () {
+    $.getJSON('http:\/\/Liujiayi2.github.io\//index.json', function (data) {
+      $('.ui.search').search({
+        source: data,
+        searchFields: ['title'],
+        showNoResults: false,
+      })
+    })
+  })
+</script>
+<script src="/js/search.js"></script>
+
+    
 
     
 
@@ -411,8 +424,8 @@ Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代
   window.background = "white"
   window.defaultDark =  true 
   window.backgroundDark = "black"
-  window.backgroundImageDark = "/me/background-dark.jpg"
-  window.darkNav =  true 
+  window.backgroundImageDark = "/img/background-dark.jpg"
+  window.darkNav =  null 
   window.maxTags =  null 
   window.hasTwitterEmbed =  null 
   window.fixedNav =  null 
@@ -444,6 +457,20 @@ Ps:如果git push -u origin &quot;main&quot;运行不成功，可以先运行代
 <script src="/js/theme.js"></script>
 
     
+
+
+<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0=" crossorigin="anonymous"></script>
+<script>
+  format()
+
+  function format() {
+    $('span[data-format="luxon"]').each(function () {
+      var date = $(this).text()
+
+      $(this).text(luxon.DateTime.fromISO(date, { locale: "en" }).toFormat("2023年01月02日"))
+    })
+  }
+</script>
 
 
 
