@@ -167,7 +167,9 @@
               
 
               | 
-                  <span data-format="luxon">2020-04-01T03:26:31&#43;08:00</span>
+                  
+                    Wednesday, Apr 1, 2020
+                  
                 
 
               | 1 minute read
@@ -175,7 +177,9 @@
               
               | Update at
                 
-                  <span data-format="luxon">2023-01-06T03:26:31&#43;08:00</span>
+                  
+                    Friday, Jan 6, 2023
+                  
                 
               
             </span>
@@ -528,20 +532,6 @@
 <script src="/js/theme.js"></script>
 
     
-
-
-<script src="https://cdn.jsdelivr.net/npm/luxon@1.26.0" integrity="sha256-4sbTzmCCW9LGrIh5OsN8V5Pfdad1F1MwhLAOyXKnsE0=" crossorigin="anonymous"></script>
-<script>
-  format()
-
-  function format() {
-    $('span[data-format="luxon"]').each(function () {
-      var date = $(this).text()
-
-      $(this).text(luxon.DateTime.fromISO(date, { locale: "en" }).toFormat("2023年01月02日"))
-    })
-  }
-</script>
 
 
 
